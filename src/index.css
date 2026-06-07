@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  color: #311b56;
+  background: #faf8f5;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #faf8f5;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+button, input, select, a { -webkit-tap-highlight-color: transparent; }
+
+/* ─── PIXEL WORLD HERO ─── */
+.pixel-grid {
+  background-image:
+    linear-gradient(rgba(49,27,86,.06) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(49,27,86,.06) 2px, transparent 2px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+}
+
+.pixel-sun {
+  position: absolute; right: 10%; top: 12%;
+  width: 128px; height: 128px;
+  background: #a57cc6; border: 4px solid #311b56;
+  box-shadow: 8px 8px 0 #311b56;
+  animation: sun-bob 5.5s steps(4) infinite;
+}
+
+.cloud {
+  position: absolute; width: 160px; height: 48px;
+  background: #faf8f5; border: 3px solid #311b56;
+  box-shadow: 6px 6px 0 #311b56;
+}
+.cloud::before, .cloud::after {
+  content: ""; position: absolute;
+  background: #faf8f5; border: 3px solid #311b56;
+}
+.cloud::before { left: 18px; top: -30px; width: 54px; height: 54px; }
+.cloud::after  { right: 22px; top: -22px; width: 46px; height: 46px; }
+.cloud-a { left: 18%; top: 18%; animation: cloud-drift 18s linear infinite; }
+.cloud-b { left: 62%; top: 31%; transform: scale(.72); animation: cloud-drift 24s linear infinite reverse; }
+
+.terrain { position: absolute; left: 0; bottom: 0; width: 100%; border-top: 4px solid #311b56; }
+.terrain-back {
+  height: 23%;
+  background: linear-gradient(135deg, transparent 0 24px, #a57cc6 24px 48px, transparent 48px) 0 0 / 96px 96px, #faf8f5;
+  opacity: .42;
+}
+.terrain-front {
+  height: 13%;
+  background: linear-gradient(90deg, #311b56 0 28px, transparent 28px 36px) 0 0 / 72px 100%, #faf8f5;
+}
+
+.runner { position: absolute; right: 18%; bottom: 14%; width: 54px; height: 86px; animation: runner-hop .8s steps(2) infinite; }
+.runner span { position: absolute; display: block; background: #311b56; }
+.runner-head { left: 14px; top: 0; width: 28px; height: 28px; box-shadow: 18px 6px 0 #a57cc6; }
+.runner-body { left: 18px; top: 32px; width: 24px; height: 34px; }
+.runner-leg { top: 66px; width: 12px; height: 20px; }
+.runner-leg.left  { left: 12px; animation: leg-left .8s steps(2) infinite; }
+.runner-leg.right { right: 4px; animation: leg-right .8s steps(2) infinite; }
+
+/* ─── LOADING BAR ─── */
+.loading-bar { width: 36%; animation: loading-scan 1.15s steps(8) infinite; }
+
+/* ─── ARTICLE CASTLE ─── */
+.pixel-castle {
+  background:
+    linear-gradient(rgba(49,27,86,.08) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(49,27,86,.08) 2px, transparent 2px),
+    #faf8f5;
+  background-size: 22px 22px;
+}
+.castle-sun, .castle-tower, .castle-gate, .castle-ground { position: absolute; border: 4px solid #311b56; }
+.castle-sun { right: 34px; top: 34px; width: 72px; height: 72px; background: #a57cc6; box-shadow: 6px 6px 0 #311b56; animation: sun-bob 4s steps(4) infinite; }
+.castle-tower { bottom: 56px; width: 92px; height: 170px; background: #faf8f5; box-shadow: 8px 8px 0 #311b56; }
+.castle-tower::before {
+  content: ""; position: absolute; left: -4px; top: -34px; width: 92px; height: 34px;
+  background: repeating-linear-gradient(90deg, #311b56 0 18px, #faf8f5 18px 30px);
+  border: 4px solid #311b56;
+}
+.tower-a { left: 14%; }
+.tower-b { left: 39%; height: 226px; width: 116px; }
+.tower-b::before { width: 116px; }
+.castle-gate { left: calc(39% + 30px); bottom: 56px; width: 56px; height: 74px; background: #311b56; }
+.castle-ground {
+  left: 0; bottom: 0; width: 100%; height: 58px;
+  background: repeating-linear-gradient(90deg, #311b56 0 34px, #faf8f5 34px 52px);
+  border-left: 0; border-right: 0; border-bottom: 0;
+}
+
+/* ─── SCAN LINES OVERLAY ─── */
+.scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(49,27,86,0.03) 3px,
+    rgba(49,27,86,0.03) 4px
+  );
+}
+
+/* ─── PIXEL IMAGE EFFECT ─── */
+.pixelated { image-rendering: pixelated; }
+
+/* ─── SCROLL HIDE ─── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── TABLE OF CONTENTS INDICATOR ─── */
+.toc-active {
+  background: #311b56 !important;
+  color: #faf8f5 !important;
+  box-shadow: 4px 4px 0 #311b56;
+  transform: translateX(4px);
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes cloud-drift  { 0% { translate: -40px 0; } 100% { translate: 70px 0; } }
+@keyframes sun-bob       { 0%,100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+@keyframes runner-hop    { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes leg-left      { 0%,100% { transform: translateX(0); } 50% { transform: translateX(14px); } }
+@keyframes leg-right     { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-14px); } }
+@keyframes loading-scan  { 0% { transform: translateX(0); } 100% { transform: translateX(180%); } }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.anim-fade-up { animation: fade-up .45s ease-out both; }
+.anim-slide-in { animation: slide-in .4s ease-out both; }
+
+@media (max-width: 768px) {
+  .pixel-sun { right: -18px; top: 8%; width: 88px; height: 88px; }
+  .cloud { opacity: .45; transform: scale(.62); }
+  .runner { right: 6%; bottom: 12%; transform: scale(.8); }
+}

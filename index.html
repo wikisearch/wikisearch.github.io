@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WikiSearch — Tra cứu Wikipedia phong cách Pixel 2D</title>
+    <meta name="description" content="WikiSearch - Công cụ tìm kiếm Wikipedia miễn phí với giao diện pixel 2D độc đáo. Hỗ trợ tiếng Việt, English, 日本語, 한국어, 中文, Français, Deutsch, Español, Русский, ไทย. Tra cứu kiến thức mọi lĩnh vực với trải nghiệm game thú vị." />
+    <meta name="keywords" content="wikipedia, tra cứu, từ điển bách khoa, pixel, wiki, 2D, game, tìm kiếm, kiến thức, học tập, nghiên cứu" />
+    <meta name="author" content="WikiSearch" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://wikisearch.pages.dev/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wikisearch.pages.dev/" />
+    <meta property="og:title" content="WikiSearch — Tra cứu Wikipedia phong cách Pixel 2D" />
+    <meta property="og:description" content="Tìm kiếm Wikipedia miễn phí với giao diện pixel 2D. Hỗ trợ 10 ngôn ngữ: Việt Nam, Anh, Nhật, Hàn, Trung, Pháp, Đức, Tây Ban Nha, Nga, Thái." />
+    <meta property="og:image" content="https://wikisearch.pages.dev/og-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="WikiSearch — Tra cứu Wikipedia phong cách Pixel 2D" />
+    <meta name="twitter:description" content="Tìm kiếm Wikipedia miễn phí với giao diện pixel 2D. Hỗ trợ 10 ngôn ngữ." />
+
+    <!-- International / hreflang -->
+    <link rel="alternate" hreflang="vi" href="https://wikisearch.pages.dev/" />
+    <link rel="alternate" hreflang="en" href="https://wikisearch.pages.dev/en" />
+    <link rel="alternate" hreflang="ja" href="https://wikisearch.pages.dev/ja" />
+    <link rel="alternate" hreflang="ko" href="https://wikisearch.pages.dev/ko" />
+    <link rel="alternate" hreflang="zh" href="https://wikisearch.pages.dev/zh" />
+    <link rel="alternate" hreflang="fr" href="https://wikisearch.pages.dev/fr" />
+    <link rel="alternate" hreflang="de" href="https://wikisearch.pages.dev/de" />
+    <link rel="alternate" hreflang="es" href="https://wikisearch.pages.dev/es" />
+    <link rel="alternate" hreflang="ru" href="https://wikisearch.pages.dev/ru" />
+    <link rel="alternate" hreflang="th" href="https://wikisearch.pages.dev/th" />
+    <link rel="alternate" hreflang="x-default" href="https://wikisearch.pages.dev/" />
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "WikiSearch",
+      "description": "Công cụ tìm kiếm Wikipedia với giao diện pixel 2D, hỗ trợ đa ngôn ngữ",
+      "url": "https://wikisearch.pages.dev/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "VND"
+      },
+      "inLanguage": ["vi", "en", "ja", "ko", "zh", "fr", "de", "es", "ru", "th"]
+    }
+    </script>
+
+    <!-- Search box structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://wikisearch.pages.dev/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://wikisearch.pages.dev/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
